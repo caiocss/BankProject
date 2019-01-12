@@ -8,18 +8,24 @@ namespace BancoCaelum
 {
     class Cliente
     {
-        public string nome;
-        public string cpf;
-        public string rg;
-        public string endereco;
-        public int idade;
+        public string Nome { get; set; }
+        public string Cpf { get; set; }
+        public string Rg { get; set; }
+        public string Endereco { get; set; }
+        public int Idade { get; set; }
         public bool EhMaiorDeIdade()
         {
-            if(this.idade >= 18)
+            if(this.Idade >= 18)
             {
                 return true;
             }
             return false;
         }
+        
+        public Cliente(string nome)
+        {
+            this.Nome = nome;
+        }
+        public Cliente() { }
     }
 }

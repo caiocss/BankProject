@@ -9,9 +9,9 @@ namespace BancoCaelum
     class Conta
     {
         
-        public Cliente titular{get; set;}
-        public int Numero{get; set;}
-        public double Saldo {get; private set;}
+        public Cliente titular{ get; set; }
+        public int Numero{ get; set; }
+        public double Saldo { get; private set; }
 
         //Metodo para Deposito
         public void Deposita(double valorDeposito)

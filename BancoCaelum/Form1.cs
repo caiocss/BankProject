@@ -22,17 +22,15 @@ namespace BancoCaelum
             Conta contaCaio = new Conta();
 
             contaCaio.Numero = 1;
-            contaCaio.titular = new Cliente();
-            contaCaio.titular.nome = "Caio";
-            contaCaio.titular.idade = 29;
+            contaCaio.titular = new Cliente("Caio");            
+            contaCaio.titular.Idade = 29;
             contaCaio.Deposita(100);
 
             Conta contaJoao = new Conta();
 
             contaJoao.Numero = 2;
-            contaJoao.titular = new Cliente();
-            contaJoao.titular.nome = "João";
-            contaJoao.titular.idade = 17;
+            contaJoao.titular = new Cliente("João");            
+            contaJoao.titular.Idade = 17;
             contaJoao.Deposita(200);
 
             bool transferWork = contaJoao.Transfere(contaCaio, 250);
@@ -42,11 +40,17 @@ namespace BancoCaelum
             else
                 MessageBox.Show($"Transferencia não realizada, o seu saldo atual é de R${contaJoao.Saldo}");
 
-            MessageBox.Show($"Conta {contaJoao.titular.nome}: R${contaJoao.Saldo}. Conta {contaCaio.titular.nome}: R${contaCaio.Saldo}");
+            MessageBox.Show($"Conta {contaJoao.titular.Nome}: R${contaJoao.Saldo}. Conta {contaCaio.titular.Nome}: R${contaCaio.Saldo}");
 
             if(contaCaio.titular.EhMaiorDeIdade())
-                MessageBox.Show($"O correntista {contaCaio.titular.nome} é maio de idade");
-            
+                MessageBox.Show($"O correntista {contaCaio.titular.Nome} é maio de idade");
+
+
+            Cliente novoCliente = new Cliente()
+            {
+                Nome = "Outro",
+                Idade = 3,
+            };
             
         }
     }
