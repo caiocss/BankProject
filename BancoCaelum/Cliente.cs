@@ -13,6 +13,7 @@ namespace BancoCaelum
         public string Rg { get; set; }
         public string Endereco { get; set; }
         public int Idade { get; set; }
+
         public bool EhMaiorDeIdade()
         {
             if(this.Idade >= 18)
