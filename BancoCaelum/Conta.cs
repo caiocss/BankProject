@@ -14,13 +14,13 @@ namespace BancoCaelum
         public double Saldo { get; private set; }
 
         //Metodo para Deposito
-        public void Deposita(double valorDeposito)
+        public void Depositar(double valorDeposito)
         {
             this.Saldo += valorDeposito;
         }
 
         //Metodo para Saque
-        public bool Saca(double valorSaque)
+        public bool Sacar(double valorSaque)
         {
             if(this.Saldo >= valorSaque)
             {
@@ -31,12 +31,12 @@ namespace BancoCaelum
         }
 
         //Metodo para transferencia
-        public bool Transfere(Conta contaDepositante, double valorTransferencia)
+        public bool Transferir(Conta contaDepositante, double valorTransferencia)
         {
-            bool sucess = this.Saca(valorTransferencia);
+            bool sucess = this.Sacar(valorTransferencia);
             if (sucess)
             {
-                contaDepositante.Deposita(valorTransferencia);
+                contaDepositante.Depositar(valorTransferencia);
                 return true;
             }
             return false;

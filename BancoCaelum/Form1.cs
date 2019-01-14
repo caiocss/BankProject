@@ -24,16 +24,16 @@ namespace BancoCaelum
             contaCaio.Numero = 1;
             contaCaio.titular = new Cliente("Caio");            
             contaCaio.titular.Idade = 29;
-            contaCaio.Deposita(100);
+            contaCaio.Depositar(100);
 
             Conta contaJoao = new Conta();
 
             contaJoao.Numero = 2;
             contaJoao.titular = new Cliente("João");            
             contaJoao.titular.Idade = 17;
-            contaJoao.Deposita(200);
+            contaJoao.Depositar(200);
 
-            bool transferWork = contaJoao.Transfere(contaCaio, 250);
+            bool transferWork = contaJoao.Transferir(contaCaio, 250);
 
             if (transferWork)
                 MessageBox.Show($"Transferencia realizada com sucesso, o seu saldo atual é de R${contaJoao.Saldo}");
